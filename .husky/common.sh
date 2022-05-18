@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# https://typicode.github.io/husky/#/?id=yarn-on-windows
 command_exists () {
   command -v "$1" >/dev/null 2>&1
 }
