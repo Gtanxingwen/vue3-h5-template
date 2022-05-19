@@ -6,7 +6,6 @@ overrides:
 specifiers:
   '@commitlint/cli': ^16.2.4
   '@commitlint/config-conventional': ^16.2.4
-  '@iconify/json': ^2.1.41
   '@types/lodash-es': ^4.17.6
   '@types/node': ^17.0.21
   '@types/qs': ^6.9.7
@@ -17,6 +16,7 @@ specifiers:
   '@vitejs/plugin-vue-jsx': ^1.3.8
   axios: ^0.27.2
   chalk: ^5.0.1
+  cross-env: ^7.0.3
   crypto-js: ^4.1.1
   dayjs: ^1.11.0
   dotenv: ^16.0.0
@@ -50,7 +50,6 @@ specifiers:
   vite-plugin-html: ^3.2.0
   vite-plugin-imagemin: ^0.6.1
   vite-plugin-mkcert: ^1.6.0
-  vite-plugin-purge-icons: ^0.8.1
   vite-plugin-style-import: ^2.0.0
   vite-plugin-svg-icons: ^2.0.1
   vite-plugin-vue-setup-extend: ^0.4.0
@@ -72,7 +71,6 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 16.2.4
   '@commitlint/config-conventional': 16.2.4
-  '@iconify/json': 2.1.41
   '@types/lodash-es': 4.17.6
   '@types/node': 17.0.31
   '@types/qs': 6.9.7
@@ -82,6 +80,7 @@ devDependencies:
   '@vitejs/plugin-vue': 1.10.2_vite@2.9.8
   '@vitejs/plugin-vue-jsx': 1.3.10
   chalk: 5.0.1
+  cross-env: 7.0.3
   dotenv: 16.0.0
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
@@ -110,7 +109,6 @@ devDependencies:
   vite-plugin-html: 3.2.0_vite@2.9.8
   vite-plugin-imagemin: 0.6.1_vite@2.9.8
   vite-plugin-mkcert: 1.6.0
-  vite-plugin-purge-icons: 0.8.1_vite@2.9.8
   vite-plugin-style-import: 2.0.0_vite@2.9.8
   vite-plugin-svg-icons: 2.0.1_vite@2.9.8
   vite-plugin-vue-setup-extend: 0.4.0_vite@2.9.8
@@ -662,29 +660,6 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/iconify/2.1.2:
-    resolution: {integrity: sha512-QcUzFeEWkE/mW+BVtEGmcWATClcCOIJFiYUD/PiCWuTcdEA297o8D4oN6Ra44WrNOHu1wqNW4J0ioaDIiqaFOQ==}
-    dependencies:
-      cross-fetch: 3.1.5
-    transitivePeerDependencies:
-      - encoding
-    dev: true
-
-  /@iconify/iconify/2.2.1:
-    resolution: {integrity: sha512-WJzw+3iicrF/tbjbxxRinSgy5FHdJoz/egTqwi3xCDkNRJPq482RX1iyaWrjNuY2vMNSPkQMuqHvZDXgA+WnwQ==}
-    dev: true
-
-  /@iconify/json/2.1.41:
-    resolution: {integrity: sha512-EO7/zC21tZLgFiNMR2CcOvko6HWHH8np9ao7bkHtJUvUR011fQWXH2dJNFUHoyTA+S+knJY7v9H9vZ3QAQGcrA==}
-    dependencies:
-      '@iconify/types': 1.1.0
-      pathe: 0.2.0
-    dev: true
-
-  /@iconify/types/1.1.0:
-    resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
-    dev: true
-
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
     engines: {node: '>=6.0.0'}
@@ -840,25 +815,6 @@ packages:
     resolution: {integrity: sha512-s1zLBjWhdEI2zwaoSgyOFoKSl109CUcVBCc7biPJ3aAf6LGLU6szDvi31JPU7bxfla2lqfhjbbg/5DdFNxOwHw==}
     dependencies:
       '@octokit/openapi-types': 11.2.0
-    dev: true
-
-  /@purge-icons/core/0.8.0:
-    resolution: {integrity: sha512-8L6hP1U9XQO5B7kvquVJ5N7jzFvO0LZLXhBCjUQzzJzi42i6MAUanVKROApqbBuh21o9tmPwvNUg0xPe/uftRA==}
-    dependencies:
-      '@iconify/iconify': 2.1.2
-      axios: 0.26.1_debug@4.3.4
-      debug: 4.3.4
-      fast-glob: 3.2.11
-      fs-extra: 10.1.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    dev: true
-
-  /@purge-icons/generated/0.8.1:
-    resolution: {integrity: sha512-rIExGA33EGKEToqtc8WfpboaR7or1XRp+KV1Y5v/P0Rq7G5Me95DmP3ow/MpG7ql+XZ9xPzyS2naGRx5358+6Q==}
-    dependencies:
-      '@iconify/iconify': 2.2.1
     dev: true
 
   /@rollup/pluginutils/4.2.1:
@@ -1448,7 +1404,7 @@ packages:
     dev: true
 
   /archive-type/4.0.0:
-    resolution: {integrity: sha1-+S5yIzBW38aWlHJ0nCZ72wRrHXA=}
+    resolution: {integrity: sha512-zV4Ky0v1F8dBrdYElwTvQhweQ0P7Kwc1aluqJsYtOBP01jXcWCyW2IEfI1YiqsG+Iy7ZR+o5LF1N+PGECBxHWA==}
     engines: {node: '>=4'}
     dependencies:
       file-type: 4.4.0
@@ -1535,14 +1491,6 @@ packages:
 
   /axios/0.21.4_debug@4.3.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
-    dependencies:
-      follow-redirects: 1.15.0
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
-  /axios/0.26.1_debug@4.3.4:
-    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
     dependencies:
       follow-redirects: 1.15.0
     transitivePeerDependencies:
@@ -1769,7 +1717,7 @@ packages:
     dev: true
 
   /cacheable-request/2.1.4:
-    resolution: {integrity: sha1-DYCIAbY0KtM8kd+dC0TcCbkeXD0=}
+    resolution: {integrity: sha512-vag0O2LKZ/najSoUwDbVlnlCFvhBE/7mGTY2B5FgCBDcRD+oVV1HYTOwM6JZfMg/hIcM6IwnTZ1uQQL5/X3xIQ==}
     dependencies:
       clone-response: 1.0.2
       get-stream: 3.0.0
@@ -2212,12 +2160,12 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
-  /cross-fetch/3.1.5:
-    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
     dependencies:
-      node-fetch: 2.6.7
-    transitivePeerDependencies:
-      - encoding
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/5.1.0:
@@ -6045,17 +5993,6 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup-plugin-purge-icons/0.8.1:
-    resolution: {integrity: sha512-7ktMV+gWtXAdOIShE8EtTcnpGhozi5H2hKk1MQVGt+7FmlLkjR+XKu1Nyzjocwd6xJvKube2Lh+SfcJ8FYYySw==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@purge-icons/core': 0.8.0
-      '@purge-icons/generated': 0.8.1
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    dev: true
-
   /rollup-plugin-visualizer/5.6.0_rollup@2.72.1:
     resolution: {integrity: sha512-CKcc8GTUZjC+LsMytU8ocRr/cGZIfMR7+mdy4YnlyetlmIl/dM8BMnOEpD4JPIGt+ZVW7Db9ZtSsbgyeBH3uTA==}
     engines: {node: '>=12'}
@@ -7176,21 +7113,6 @@ packages:
       axios: 0.21.4_debug@4.3.4
       debug: 4.3.4
       picocolors: 1.0.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    dev: true
-
-  /vite-plugin-purge-icons/0.8.1_vite@2.9.8:
-    resolution: {integrity: sha512-H77YDvECkdzwsgYTu6LR5Nx0wey5Hporw+3/hTYTZh7D7YcarS+RsOvpUEgd2XG5fChgCmMBtMfnr2JmrNanSg==}
-    engines: {node: '>= 12'}
-    peerDependencies:
-      vite: ^2.0.0-beta.3
-    dependencies:
-      '@purge-icons/core': 0.8.0
-      '@purge-icons/generated': 0.8.1
-      rollup-plugin-purge-icons: 0.8.1
-      vite: 2.9.8_less@4.1.2
     transitivePeerDependencies:
       - encoding
       - supports-color

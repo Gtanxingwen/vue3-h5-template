@@ -8,6 +8,7 @@ import path from 'path';
 
 export function configSvgIconsPlugin(isBuild: boolean) {
   const svgIconsPlugin = createSvgIconsPlugin({
+    // 指定需要缓存的图标文件夹
     iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
     svgoOptions: isBuild,
     // default

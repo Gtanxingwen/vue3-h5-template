@@ -23,6 +23,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
   const env = loadEnv(mode, root);
 
+  console.log('✨ ======= command ================ ', command);
+  console.log('✨ ======= mode ================ ', mode);
+
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const viteEnv = wrapperEnv(env);
 

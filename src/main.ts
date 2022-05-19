@@ -1,3 +1,5 @@
+// 注册svg雪碧图
+import 'virtual:svg-icons-register';
 import { createApp } from 'vue';
 // 保证normalize.css 在最前面
 import './assets/css/normalize.css';
