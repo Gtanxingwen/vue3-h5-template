@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "build:test": "vue-tsc --noEmit && vite build --mode test",
+    "build": "vue-tsc --noEmit && cross-env NODE_ENV=production vite build",
+    "build:test": "vue-tsc --noEmit && cross-env NODE_ENV=production vite build --mode test",
     "serve": "vite preview",
     "gen:icon": "esno ./build/generate/icon/index.ts",
     "report": "cross-env REPORT=true npm run build",
