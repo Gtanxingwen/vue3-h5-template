@@ -36,7 +36,13 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   vitePlugins.push(windiCSS());
 
   // @vitejs/plugin-legacy 为打包后的文件提供传统浏览器兼容性支持
-  VITE_LEGACY && isBuild && vitePlugins.push(legacy());
+  VITE_LEGACY &&
+    isBuild &&
+    vitePlugins.push(
+      legacy({
+        targets: ['defaults', 'not IE 11'],
+      }),
+    );
 
   // vite-plugin-html
   vitePlugins.push(configHtmlPlugin(viteEnv, isBuild));
