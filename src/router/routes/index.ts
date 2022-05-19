@@ -15,7 +15,7 @@ Object.keys(modules).forEach((key) => {
 export const RootRoute: RouteRecordRaw = {
   path: '/',
   name: 'Root',
-  redirect: PageEnum.BASE_HOME, // 重定向到登录页
+  redirect: PageEnum.BASE_LOGIN, // 重定向到登录页
   meta: {
     title: 'Home Page',
   },

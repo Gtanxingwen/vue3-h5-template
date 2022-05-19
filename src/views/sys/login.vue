@@ -1,6 +1,6 @@
 <template>
   <div>login page</div>
-  <button @click="login">登录</button>
+  <button class="login-btn" @click="login">登录</button>
 </template>
 
 <script lang="ts">
@@ -23,3 +23,15 @@
     },
   });
 </script>
+
+<style lang="less" scoped>
+  .login-btn {
+    display: block;
+    width: 100px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    margin: 60px auto;
+    cursor: pointer;
+  }
+</style>

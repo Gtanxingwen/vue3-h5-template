@@ -1,7 +1,9 @@
 <template>
-  <div>dashboard</div>
-  <div> 使用Svg Icon 雪碧图 </div>
-  <SvgIcon name="trash" />
+  <div>
+    <div>dashboard</div>
+    <div> 使用Svg Icon 雪碧图 </div>
+    <SvgIcon name="trash" />
+  </div>
 </template>
 
 <script lang="ts">
