@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dashboard">
     <div>dashboard</div>
     <div> 使用Svg Icon 雪碧图 </div>
     <SvgIcon name="trash" />
@@ -18,3 +18,9 @@
     setup() {},
   });
 </script>
+
+<style lang="less">
+  .dashboard {
+    height: 200px;
+  }
+</style>

@@ -1,6 +1,7 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 import pkg from './package.json';
 import dayjs from 'dayjs';
+import px2vp from 'postcss-px2vp';
 import { loadEnv } from 'vite';
 import { resolve } from 'path';
 import { createProxy } from './build/vite/proxy';
@@ -87,6 +88,26 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // Suppress warning
       __INTLIFY_PROD_DEVTOOLS__: false,
       __APP_INFO__: JSON.stringify(__APP_INFO__),
+    },
+
+    css: {
+      postcss: {
+        plugins: [
+          px2vp({
+            viewportWidth: 750,
+          }),
+          {
+            postcssPlugin: 'internal:charset-removal',
+            AtRule: {
+              charset: (atRule) => {
+                if (atRule.name === 'charset') {
+                  atRule.remove();
+                }
+              },
+            },
+          },
+        ],
+      },
     },
 
     // The vite plugin used by the project. The quantity is large, so it is separately extracted and managed
