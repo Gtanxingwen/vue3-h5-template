@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>dashboard</div>
+  <div class="dashboard">
+    <div class="font-bold">dashboard</div>
     <div> 使用Svg Icon 雪碧图 </div>
     <SvgIcon name="trash" />
   </div>
@@ -18,3 +18,9 @@
     setup() {},
   });
 </script>
+
+<style lang="less">
+  .dashboard {
+    height: 200px;
+  }
+</style>
