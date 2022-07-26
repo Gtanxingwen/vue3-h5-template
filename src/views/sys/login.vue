@@ -1,5 +1,14 @@
 <template>
   <div>login page</div>
+  <!-- sizes and positions -->
+  <div class="p-5px mt-[0.3px]">sizes and positions</div>
+
+  <!-- colors -->
+  <button class="bg-hex-b2a8bb">colors</button>
+  <button class="bg-[hsl(211.7,81.9%,69.6%)]">colors2</button>
+
+  <!-- grid template -->
+  <div class="grid-cols-[auto,1fr,30px]">grid template</div>
   <button class="login-btn" @click="login">登录</button>
 </template>
 
